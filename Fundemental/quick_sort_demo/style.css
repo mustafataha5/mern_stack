@@ -1,0 +1,44 @@
+.contanier{
+    width: 70%;
+    margin: 50px auto;
+}
+
+#sort{
+    display: flex;
+    flex-direction: column;
+}
+.mybtn{
+    width: fit-content;
+    margin: 10px ;
+    padding: 5px 12px;
+}
+
+#textArea1{
+    border: 2px solid grey;
+    padding: 5px 15px ;
+    width: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    resize: none;
+}
+
+#textArea2,#textArea3{
+    border: 2px solid grey;
+    padding: 5px 15px ;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    resize: none;
+}
+
+.mysort{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.mysort1{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 10px;
+}

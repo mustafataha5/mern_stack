@@ -46,20 +46,54 @@ const partion_2 = (arr,beg,end) => {
 
 }  
 
-
-const QuickSort = (arr,beg,end)=> {
+const QuickSort_1 = (arr,beg,end)=> {
     if(beg < end ){
-        pIndex = partion_2(arr,beg,end) ; 
-        QuickSort(arr,beg,pIndex);
-        QuickSort(arr,pIndex+1,end) ; 
+        pIndex = partion_1(arr,beg,end) ; 
+        QuickSort_1(arr,beg,pIndex);
+        QuickSort_1(arr,pIndex+1,end) ; 
     }
 
 }
 
+const QuickSort_2 = (arr,beg,end)=> {
+    if(beg < end ){
+        pIndex = partion_2(arr,beg,end) ; 
+        QuickSort_2(arr,beg,pIndex);
+        QuickSort_2(arr,pIndex+1,end) ; 
+    }
+
+}
+
+
+
 arr = [2,5,6,7,1];
-console.log("before : "+arr) ; 
-QuickSort(arr,0,arr.length-1); 
-console.log("after : "+arr) ; 
+
+let { performance } = require('perf_hooks');
+const start = performance.now();
+
+console.log("before : "+arr) ;
+let arr_1 = [...arr]
+QuickSort_1(arr_1,0,arr.length-1); 
+console.log("after using Pivot Rigth : "+arr_1) ; ;
+console.log(`This took ${performance.now() - start} milliseconds to run`);
 
 
+console.log('----------------------------')
+const start1 = performance.now();
 
+let arr_2 = [...arr]
+console.log("before : "+arr_2) ;
+
+QuickSort_2(arr_2,0,arr.length-1); 
+console.log("after using Pivot Med : "+arr_2) ; ;
+console.log(`This took ${performance.now() - start1} milliseconds to run`);
+
+
+console.log('----------------------------')
+
+const start2 = performance.now();
+console.log("before : "+arr_2) ;
+
+QuickSort_2(arr_2,0,arr.length-1); 
+console.log("after using Pivot Med (Sorted array) : "+arr_2) ; ;
+console.log(`This took ${performance.now() - start2} milliseconds to run`);
