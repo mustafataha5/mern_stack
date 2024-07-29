@@ -82,15 +82,15 @@ class LinkedList {
 
 const list = new LinkedList() ; 
 
-for(let i= 0 ; i< 10 ; i ++){
-    list.add(Math.floor(Math.random()*100)); 
-}
-// list.add(99);
-// list.add(67);
-// list.add(32);
-// list.add(35);
-// list.add(39);
-// list.add(26);
+// for(let i= 0 ; i< 10 ; i ++){
+//     list.add(Math.floor(Math.random()*100)); 
+// }
+list.add(99);
+list.add(67);
+list.add(100);
+list.add(101);
+list.add(102);
+list.add(26);
 list.printAll();
 console.log("-------------------  After Sorted");
 list.sort(); 

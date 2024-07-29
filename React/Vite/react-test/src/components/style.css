@@ -1,0 +1,16 @@
+.avatar {
+    border-radius: 50%;
+    border: 2px solid rgb(61, 122, 235);
+  }
+  
+
+  .mylist{
+     width: 50%;
+     list-style-type: '*';
+     margin: 10px auto;
+  }
+  .mylist >li{
+      margin: 10px;
+      text-align: left;
+      padding: 4px 10px;
+  }

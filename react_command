@@ -1,0 +1,20 @@
+CRA
+------
+npx create-react-app yourappname
+cd yourappname
+npm run start
+npm install styled-components@5.3.11 
+npm install styletron-react
+------------------------------------
+Vite
+============================
+npm create vite@latest
+Enter the new application's name
+Select the React option
+Select the JavaScript + SWC option
+cd your-project-name-here
+ npm install
+npm run dev
+
+
+
