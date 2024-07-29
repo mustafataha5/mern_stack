@@ -1,0 +1,9 @@
+.Nav_Main{
+    display: flex ;
+    justify-content: space-between;
+}
+
+.subcontents{
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,11 @@
+.mydiv {
+    font-family: Arial, sans-serif; 
+    font-weight: bold;
+    height: 80px;
+    margin: 10px ;
+    width: 37vh;
+    height: 60vh;
+    display: inline-block;
+    background: #6fa8dc; 
+    vertical-align: top;
+}

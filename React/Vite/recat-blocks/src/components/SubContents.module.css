@@ -1,0 +1,10 @@
+.mydiv {
+    font-family: Arial, sans-serif; 
+    font-weight: bold;
+    height: 80px;
+    margin: 20px 10px 10px 10px  ;
+    width: 45vh;
+    height: 50vh;
+    display: inline-block;
+    background: #e6bd09; 
+}

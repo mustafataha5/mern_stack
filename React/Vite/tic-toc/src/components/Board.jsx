@@ -1,5 +1,5 @@
 import React from "react";
-import './style.css'
+// import './style.css'
 import Square from "./Square";
 import { useState } from "react";
 export default function Board() {
@@ -30,7 +30,7 @@ export default function Board() {
     }
 
     return (
-        <>
+        <div className="mydiv">
             <div className="status">{status}</div>
             <div className="board-row">
                 <Square value={squares[0]}  SquareClicked={() => handle(0)}></Square>
@@ -47,7 +47,7 @@ export default function Board() {
                 <Square value={squares[7]} SquareClicked={() => handle(7)}> </Square>
                 <Square value={squares[8]} SquareClicked={() => handle(8)}> </Square>
             </div>
-        </>
+        </div>
     );
 }
 

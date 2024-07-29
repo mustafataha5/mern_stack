@@ -1,0 +1,11 @@
+.mydiv {
+    font-family: Arial, sans-serif; 
+    font-weight: bold;
+    height: 80px;
+    margin: 10px 10px 10px 0px  ;
+    width: 155vh;
+    height: 80vh;
+    /* display: flex ; 
+    justify-content: space-evenly; */
+    background: #d1340d; 
+}

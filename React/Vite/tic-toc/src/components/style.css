@@ -79,6 +79,8 @@ body {
 
 .status {
   margin-bottom: 10px;
+  width: fit-content;
+  
 }
 .game {
   display: flex;
@@ -87,4 +89,8 @@ body {
 
 .game-info {
   margin-left: 20px;
+}
+.mydiv{
+  display: flex;
+  flex-direction: column;
 }
