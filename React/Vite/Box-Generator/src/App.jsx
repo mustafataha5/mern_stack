@@ -6,9 +6,9 @@ import Box from './components/Box';
 function App() {
   const [boxs, setBoxs] = useState([])
 
-  const addNewBox = (color) => {
+  const addNewBox = (color,size) => {
     const newBoxs = boxs.slice();
-    newBoxs.push(color);
+    newBoxs.push({color,size});
     setBoxs(newBoxs);
 
   }
@@ -22,7 +22,7 @@ function App() {
       <div className='row my-4'>
         {boxs.map( (box) => {
          
-         return (<Box color={box}></Box>);
+         return (<Box color={box.color} size={box.size+"px"}></Box>);
           
        })}
         </div>

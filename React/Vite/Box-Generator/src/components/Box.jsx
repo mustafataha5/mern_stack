@@ -6,7 +6,7 @@ import StyledBox from './BoxStyle';
 
 const Box = (props) => {
   return (
-        <StyledBox bgColor={props.color}></StyledBox>
+        <StyledBox bgColor={props.color} size={props.size}></StyledBox>
   )
 }
 
