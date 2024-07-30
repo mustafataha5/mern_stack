@@ -3,7 +3,7 @@ CRA
 npx create-react-app yourappname
 cd yourappname
 npm run start
-npm install styled-components@5.3.11 
+
 npm install styletron-react
 ------------------------------------
 Vite
@@ -16,5 +16,8 @@ cd your-project-name-here
  npm install
 npm run dev
 
+
+---------styled-------------------
+npm install styled-components@5.3.11 
 
 

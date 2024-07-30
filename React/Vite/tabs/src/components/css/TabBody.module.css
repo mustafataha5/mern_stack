@@ -1,0 +1,9 @@
+.tabBody{
+    margin: 10px 0px;
+    border: 1px solid seagreen;
+    height:  200px;
+    display: flex;
+    justify-content: start;
+    width: 50vh;
+    
+}
