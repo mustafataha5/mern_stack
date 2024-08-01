@@ -1,0 +1,12 @@
+.nav {  
+    background-color: #8c30c5;
+    height: 20vh;
+    margin-bottom: 50px ;
+    display: flex;
+    justify-content: end;
+}
+
+.name{
+    color : white ; 
+    margin:  2px 15px;
+}

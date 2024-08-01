@@ -21,3 +21,10 @@ npm run dev
 npm install styled-components@5.3.11 
 
 
+npm install bootstrp 
+------------------------------
+import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
+import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
