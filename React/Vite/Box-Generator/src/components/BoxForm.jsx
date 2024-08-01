@@ -23,7 +23,7 @@ const BoxForm = (props) => {
                     <input className='p-2 ' type="text" value={color} onChange={(e) => setColor(e.target.value)} />
                 </div>
                 <div className='my-2'>
-                    <label htmlFor="" className='mx-3'>Color: </label>
+                    <label htmlFor="" className='mx-3'>Size: </label>
                     <input className='p-2 ' type="number" min={10} value={boxSize} onChange={(e) => setBoxSize(e.target.value)} />
                 </div>
                 <div className='d-flex justify-content-center'>

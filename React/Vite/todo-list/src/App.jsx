@@ -6,7 +6,7 @@ import { useEffect, useRef } from 'react';
 function App() {
   const [data, setData] = useState([])
   const isInitialLoad = useRef(true)
-
+  let flag = true 
   
   //load data 
   useEffect(() => {
