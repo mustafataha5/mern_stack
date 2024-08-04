@@ -5,7 +5,7 @@ import Task from './components/Task';
 import Wrap from './components/Wrap';
 import { TaskContext } from './context/TaskContext';
 let inedxId = 0;
-const initialState = [{}]
+const initialState = []
 const StateReducer = (state, action) => {
   switch (action.type) {
     case 'add':
