@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+// import './App.css'
+import  './style.css' ;
 import {
   Routes,
   Route,
@@ -39,15 +40,14 @@ function App() {
 
 
   return (
-    <>
+    <div className="mydiv">
       <Link to="Home">Home</Link>
       <Routes>
         <Route path='home' element={<Home />} ></Route>
         <Route path='/:data' element={<ShowData />}> </Route>
         <Route path='/:data/:color/:bg' element={<ShowBgData />}> </Route>
       </Routes>
-
-    </>
+    </div>
   )
 }
 
