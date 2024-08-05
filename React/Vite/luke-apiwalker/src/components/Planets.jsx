@@ -18,6 +18,7 @@ const Planets = () => {
       .catch(err => {
         console.log("------------<<<<<" + err)
         setResult(undefined);
+        setLoading(false);
       });
   }, [id]);
 
