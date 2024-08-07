@@ -2,7 +2,7 @@ const Joke = require("../models/joke.model") ;
 
 
 
-//
+//get 
 module.exports.findAllJokes = (req,res) => {
         Joke.find()
         .then( (allJokes) => {
@@ -23,9 +23,21 @@ module.exports.findJokeById = (req,res) => {
         });
 }
 
+module.exports.getRandomJoke = (req,res)=>{
+    Joke.find()
+        .then( (allJokes) => {
+            // console.log(allJokes.length);
+            // console.log(  )
+            res.json({joke:allJokes[Math.floor(Math.random()*allJokes.length)]}) ; 
+        })
+        .catch((err)=>{
+            res.json(err) ; 
+        });
+}
+
 //create  Joke ; 
 module.exports.createJoke = (req,res) => {
-    console.log(req.body);
+    //console.log(req.body);
     Joke.create(req.body)
     .then((newUser) => {
           console.log(newUser);
