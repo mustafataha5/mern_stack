@@ -1,0 +1,16 @@
+mustafataha5
+hBUGA6Ku3guARWLd
+
+ mongosh "mongodb+srv://cluster0.cvs6yls.mongodb.net/" --apiVersion 1 --username mustafataha5
+ 
+ 
+ 
+ 
+ 
+ npm init -y
+npm install mongoose express dotenv
+
+
+
+
+
