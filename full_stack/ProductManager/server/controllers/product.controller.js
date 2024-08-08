@@ -17,7 +17,24 @@ module.exports.FindAllProducts = (req,res) =>{
 }
 
 module.exports.FindProduct = (req,res) => { 
-    Product.find({_id:req.params.id})
+    Product.findOne({_id:req.params.id})
     .then(myProduct => res.json({product:myProduct}))
     .catch(err => res.json(err)) 
+}
+
+//update 
+module.exports.updateProduct = (req,res) => {
+   Product.findByIdAndUpdate({_id:req.params.id},req.body
+    ,{new:true,runValidators:true}
+   )
+   .then(product => res.json({product:product}))
+   .catch(err => res.json(err)) ; 
+}
+
+
+//delete 
+module.exports.deleteProduct = (req,res) => {
+    Product.findByIdAndDelete({_id:req.params.id})
+    .then(product => res.json({product:product}))
+   .catch(err => res.json(err)) ; 
 }

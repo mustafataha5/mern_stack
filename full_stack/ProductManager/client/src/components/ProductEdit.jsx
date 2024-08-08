@@ -1,24 +1,38 @@
-import React, { useState } from 'react'
-import axios from 'axios' ; 
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
 
-const ProductForm = ({addProduct}) => {
+const ProductEdit = () => {
     const [title,setTitle]= useState('') ; 
     const [price,setPrice] = useState(0) ; 
-    const [description,setDesc] = useState('') ; 
-
-    const handleSubmit = (e) => {
-        e.preventDefault() ;
-        axios.post("http://localhost:8000/api/products",{title,price,description})
+    const [description,setDesc] = useState('') ;
+    const {id} = useParams() ; 
+    const navigate = useNavigate() ;  
+    useEffect(()=>{
+        axios.get("http://localhost:8000/api/products/"+id)
         .then(res => {
-            addProduct(res.data.product)
-            console.log(res.data)})
-        .catch(err => console.log(err)) ; 
+            //console.log(res.data.product[0]);
+            setTitle(res.data.product.title);
+           setPrice(res.data.product.price);
+           setDesc(res.data.product.description);
+        })
+        .catch(err => {
+            //console.log(">>>>>>"+id);
+            console.log(err)});
 
-        setTitle('') ;
-        setPrice(0);
-        setDesc('') ; 
+    },[])
+
+    const handleSubmit = (e)=>{
+        e.preventDefault() ;
+
+         axios.patch("http://localhost:8000/api/products/"+id,{title,price,description})
+         .then(res => {
+            console.log(res.data) ; 
+            navigate("/products/"+id);
+         })
+         .catch(err => console.log(err)) ; 
+
     }
-
 
   return (
     <div className='my-5 d-flex justify-content-center'>
@@ -39,7 +53,7 @@ const ProductForm = ({addProduct}) => {
                     </tr>
                     <tr> 
                         <td> </td>
-                        <td className='text-start'> <input className='btn btn-outline-warning' type="submit" value="Create" /> </td>
+                        <td className='text-start' > <input className='btn btn-outline-primary' type="submit" value="Edit" /> </td>
                     </tr>
                 </tbody>
             </table>
@@ -50,4 +64,4 @@ const ProductForm = ({addProduct}) => {
   )
 }
 
-export default ProductForm
+export default ProductEdit
