@@ -1,0 +1,74 @@
+-----
+mkdir server 
+cd server 
+npm init -y 
+npm install express mongoose dotenv cors 
+
+
+-----------------------------------------------------
+server.js
+--------------------------------------------------
+const express = require('express') ; 
+
+const app = express() ; 
+
+require('dotenv').config() ;
+const cors = require('cors') // This is new
+const port = process.env.PORT;
+
+// Middleware
+app.use(cors({
+}));
+app.use(express.json()); // This is new
+app.use(express.urlencoded({ extended: true })); // This is new
+
+
+require('./config/mongoose.config');
+
+app.listen(port, () => console.log(`Listening on port: ${port}`) );
+
+-------------------------------------------------------------------------
+.env
+-----------------------------------------------------------------------
+PORT=8000
+DB=AuthorDB
+# mongo atlas connection
+ATLAS_USERNAME=mustafataha5
+ATLAS_PASSWORD=hBUGA6Ku3guARWLd
+
+
+
+--------------------------------------------------------------------------
+config.js
+--------------------------------------------------------------------------
+const mongoose = require('mongoose');
+const dbName = process.env.DB;
+const username = process.env.ATLAS_USERNAME;
+const pw = process.env.ATLAS_PASSWORD;
+const uri = `mongodb+srv://${username}:${pw}@cluster0.cvs6yls.mongodb.net/${dbName}?retryWrites=true&w=majority&appName=Cluster0`;
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+    .then(() => console.log("Established a connection to the database"))
+    .catch(err => console.log("Something went wrong when connecting to the database", err));
+    
+    
+------------------------------------------------------------------------------------
+
+
+    
+
+
+
+------
+client
+-------
+npm install react-router-dom bootstrap axios
+
+
+
+
+
+
+

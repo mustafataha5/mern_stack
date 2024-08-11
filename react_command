@@ -19,6 +19,13 @@ npm run dev
 
 ---------styled-------------------
 npm install styled-components@5.3.11 
+----------------------------------
+
+--------materialUI----------------------
+npm install @mui/material @emotion/react @emotion/styled
+npm install @fontsource/roboto
+--------------------------------------
+
 
 
 npm install bootstrp 

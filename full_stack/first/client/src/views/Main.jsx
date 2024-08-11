@@ -19,16 +19,24 @@ const Main = () => {
     .catch(err => console.log(err)) 
 },[index])
 
+  const addPerson = (newPersonObject)=>{
+      axios.post('http://localhost:8000/api/people',newPersonObject)
+        .then(res => {
+                console.log(res.data)
+                setPeople([...people,res.data]) ;  
+                })
+        .catch(err => console.log(err)) ;
+  }
  const removePerson =(id)=>{
      setPeople(people.filter(person => person._id != id)); 
  } ; 
   
- const newPerson =()=>{
-    setIndex(index+1) ; 
-} ; 
+//  const newPerson =()=>{
+//     setIndex(index+1) ; 
+// } ; 
     return (
     <div>
-      <PersonForm newPerson={newPerson}/>
+      <PersonForm onSubmitProp={addPerson}  initalFirstName="" initalLastName=""/>
       {load && <PeopleList people={people} removePerson={removePerson}   />}
     </div>
   )
