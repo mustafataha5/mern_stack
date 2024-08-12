@@ -16,7 +16,7 @@ const AuthorForm = ({initalName,submitHandle,text,errors}) => {
   const submitForm = (e)=>{
     e.preventDefault(); 
     submitHandle({name}) ;
-    navigate("/author") ; 
+    
   }
 
   return (
