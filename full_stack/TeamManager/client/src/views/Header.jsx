@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <Box sx={{ display:"flex",my:'10px' ,mx:'20px',color:'#29b1e6' }}>
-       <h1>  <Link to="/players/"> Manage Player</Link> | <Link   to='/players/game'> Manage Player Status</Link></h1>     
+       <h1>  <Link to="/players/"> Manage Player</Link> | <Link   to='/players/game/1'> Manage Player Status</Link></h1>     
     </Box>
   )
 }

@@ -31,7 +31,9 @@ function App() {
   const addAuthor = (newAuthor) =>{
     axios.post("http://localhost:8000/api/authors",newAuthor)
     .then(res => { 
-       setAuthorList([...authorList,res.data]) ;
+      setAuthorList([...authorList,res.data]) ;
+      navigate('/author')
+      setErrors([]);
       console.log(res)})
     .catch(err => {
       //console.log("-----"+Object.keys(err.response))

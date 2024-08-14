@@ -7,6 +7,7 @@ module.exports=app => {
     app.get('/api/players/:id',PlayerController.findPlayer); 
     app.patch('/api/players/:id',PlayerController.updatePlayer)
     app.delete('/api/players/:id',PlayerController.deletePlayer) 
+    app.post('/api/games',PlayerController.createGame); 
 }
 
 
