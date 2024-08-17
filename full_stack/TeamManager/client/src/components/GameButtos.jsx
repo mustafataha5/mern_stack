@@ -1,15 +1,27 @@
+import axios from 'axios'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const GameButtos = () => {
-    const [values,setValues] = useState([false,false,true])
-
+const GameButtos = ({id,gameId,game ,status,setLoaded}) => {
+    const [values,setValues] = useState(status)
+    const navigate = useNavigate() ; 
     const filpAll=(index)=>{
-        setValues(values.map((value,i) => {
+
+    const newValues=values.map((value,i) => {
             if(i===index){
                 return !value ; 
             }
             return false
-        }));
+        })
+        setValues(newValues);
+
+        axios.patch("http://localhost:8000/api/games/player/"+id+"/"+gameId,{status:newValues})
+        .then(res => {console.log(res)
+            navigate('/players/game/'+game)
+        })
+        .catch(err => console.log(err));
+        setLoaded(false) ;
+
     }
 
     return (
